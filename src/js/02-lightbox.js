@@ -3,19 +3,6 @@ import { galleryItems } from './gallery-items.js';
 const galeryListOfImagesEl = document.querySelector('.gallery');
 const imageItemsMarkup = createImageMarkup(galleryItems);
 
-function returnUrlOfBiggestImg(evt) {
-    if (evt.target.nodeName !== 'IMG') {
-        return
-    }
-    var lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-    })
-    lightbox.open() 
-}
-
-galeryListOfImagesEl.addEventListener('click', returnUrlOfBiggestImg)
-
 function createImageMarkup(items) {
       return items.map( item =>
       `
@@ -31,3 +18,7 @@ function createImageMarkup(items) {
   }
 galeryListOfImagesEl.innerHTML = imageItemsMarkup;
 
+new SimpleLightbox(".gallery a", {
+    captionsData: "alt",
+     captionDelay: 250,
+     })
