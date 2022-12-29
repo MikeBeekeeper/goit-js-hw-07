@@ -1,7 +1,5 @@
 import { galleryItems } from './gallery-items.js';
 
-import * as basicLightbox from 'basiclightbox';
-
 const galeryListOfImagesEl = document.querySelector('.gallery');
 const imageItemsMarkup = createImageMarkup(galleryItems);
 
@@ -9,9 +7,9 @@ function returnUrlOfBiggestImg(evt) {
     if (evt.target.nodeName !== 'IMG') {
         return
      }
-    const bigImg = basicLightbox.create(`
+  const bigImg = basicLightbox.create(`
      <img src="${evt.target.dataset.source}" width="800" height="600">
-  `) 
+  `)
     bigImg.show();
   
     document.addEventListener('keydown', event => {
